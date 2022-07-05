@@ -10,7 +10,7 @@
 }
 .select_container{
   overflow-y: scroll;
-  overflow-x: scroll;
+  overflow-x: hidden;
   max-height: 90vh;
   scrollbar-color: rebeccapurple green;
   scrollbar-width: thin;
@@ -31,7 +31,7 @@
 }
 .trade_items{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(4,1fr);
 }
 .trade_container::-webkit-scrollbar{
   width: 8px;
@@ -42,8 +42,12 @@
 }
 .currency_items{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+  /* grid-auto-columns: auto; */
 }
+/* .currency_listitems{
+  width:50px;
+} */
 
 
 .list_item{

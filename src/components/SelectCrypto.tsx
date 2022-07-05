@@ -47,7 +47,7 @@ function handleClick(e:string){
         <List className="currency_items">
         {
             apiResponse?.map(( cryptoDetails) => (
-                <ListItem disablePadding key={cryptoDetails.curName}>
+                <ListItem disablePadding key={cryptoDetails.curName} className="currency_listitems">
                 <ListItemButton onClick={()=>{
                     handleClick(cryptoDetails.curName)
                 }}>
