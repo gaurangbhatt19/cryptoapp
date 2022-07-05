@@ -29,7 +29,7 @@
   scrollbar-color: rebeccapurple green;
   scrollbar-width: thin;
   display: grid;
-  justify-content: center;
+  /* justify-content: center; */
 }
 .trade_items{
   display: grid;

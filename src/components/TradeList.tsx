@@ -39,7 +39,7 @@ const TradeList: React.FC<tradelistprops> = (props:tradelistprops) => {
         {
         
         
-        props.isClicked?
+        props.isClicked ?
 
         <List className='trade_items'>
          <>
@@ -49,7 +49,7 @@ const TradeList: React.FC<tradelistprops> = (props:tradelistprops) => {
          </>
         </List>
 
-      : <div style={{width:"30vw", color: 'green'}}><p>Please select Bitcoin exchange rate to view currency list</p></div>
+      : <div style={{color: 'green'}}><p>Please select Bitcoin exchange rate to view currency list</p></div>
         }
         
     </Box>
