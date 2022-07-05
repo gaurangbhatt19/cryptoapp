@@ -23,23 +23,24 @@ const TradeList: React.FC<tradelistprops> = (props:tradelistprops) => {
       setListOfIds(idsArray);
     })
   },[])
-
-
+  
   let isIncluded:boolean=false
+  let tradeList:trade[]=  listOfIds?.filter((item:any) => {
+    // comparing clicked crypto text with trade left right
+     isIncluded= item.base_currency === props.searchedCrypto || item.quote_currency===props.searchedCrypto
+    return  (isIncluded) && (props.searchedCrypto!==null)
+    })
+
+  
   return (
     <Box sx={{ bgcolor: 'white',border: '1px solid white',padding: '10px'}} className="trade_container">
         <h2>Currency Pair Trade</h2>
         <Divider/>
         <List className='trade_items'>
          <>
+
         {
-          listOfIds?.filter((item:any) => {
-            
-          // comparing clicked crypto text with trade left right
-           isIncluded= item.base_currency === props.searchedCrypto || item.quote_currency===props.searchedCrypto
-  
-          return  (isIncluded) && (props.searchedCrypto!==null)
-          }).map((item:any,index:number) => (<li className="list_item" key={index}>{item.base_currency +" - "+ item.quote_currency}</li>))
+          tradeList.length!==0?tradeList.map((item:any,index:number) => (<li className="list_item" key={index}>{item.base_currency +" - "+ item.quote_currency}</li>)):<p>No trade available</p>
         }
          </>
         
