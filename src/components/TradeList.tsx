@@ -49,7 +49,7 @@ const TradeList: React.FC<tradelistprops> = (props:tradelistprops) => {
          </>
         </List>
 
-      : <div style={{color: 'green'}}><p>Please select Bitcoin exchange rate to view currency list</p></div>
+      : <div style={{color: 'green'}}><p>Please select Bitcoin exchange rate to view Trade list</p></div>
         }
         
     </Box>
