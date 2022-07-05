@@ -13,7 +13,7 @@ import {ReactComponent as ReactLogo} from '../eth.svg';
 
 
 const SelectCrypto: React.FC <selectcryptoprops> = (props: selectcryptoprops) => {
-
+  
   const[apiResponse,setApiResponse]=useState<crypto[]>()
   useEffect(() =>{
     axios.get("https://api.coingecko.com/api/v3/exchange_rates")
@@ -50,6 +50,7 @@ function handleClick(e:string){
                 <ListItem disablePadding key={cryptoDetails.curName} className="currency_listitems">
                 <ListItemButton onClick={()=>{
                     handleClick(cryptoDetails.curName)
+                    props.handleIsClicked(true)
                 }}>
                   <ListItemIcon>
                     <img src={"https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@bea1a9722a8c63169dcc06e86182bf2c55a76bbc/32/black/"+cryptoDetails.curName.toLocaleLowerCase()+".png"} alt=""/> 
