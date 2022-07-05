@@ -1,24 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import SelectCrypto from './components/SelectCrypto';
+import TradeList from './components/TradeList';
+import { Grid } from '@mui/material';
 
 function App() {
+const [searchText,setSearchText]=useState<string|null>(null)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="app_container">
+        <Grid container spacing={2}>
+          
+          <Grid item md={6}>
+            <SelectCrypto setSearchText={setSearchText}/>
+           </Grid>
+  
+          <Grid item md={6}>
+            <TradeList searchedCrypto={searchText}/>
+          </Grid>
+        
+      </Grid>
+      </div>
     </div>
   );
 }
