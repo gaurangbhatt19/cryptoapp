@@ -40,7 +40,7 @@ const TradeList: React.FC<tradelistprops> = (props:tradelistprops) => {
          <>
 
         {
-          props.isClicked?tradeList.length!==0?tradeList.map((item:any,index:number) => (<li className="list_item" key={index}>{item.base_currency +" - "+ item.quote_currency}</li>)):<p>No trade available</p> : <p>No Currency is Selected</p>
+          props.isClicked?tradeList.length!==0?tradeList.map((item:any,index:number) => (<li className="list_item" key={index}>{item.base_currency +" - "+ item.quote_currency}</li>)):<p>No trade available</p> : <p>Please select Bitcoin exchange rate to view currency list</p>
         }
          </>
         
